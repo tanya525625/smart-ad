@@ -7,6 +7,8 @@ from tools.emotions_recognizer import EmotionsRecognizer
 
 
 def make_frame(cap):
+    """Function for making frames"""
+
     for i in range(30):
         cap.read()
     ret, frame = cap.read()
@@ -14,12 +16,22 @@ def make_frame(cap):
 
 
 class FrameAnalyzer:
+    """Class for making photos and determining emotions"""
     def __init__(self, period, photo_storage_path, emotions):
+        """
+        FrameAnalyzer constructor
+
+        :param period: period for making frames
+        :param photo_storage_path: path to storage with photos
+        :param emotions: emotions for determining
+        """
+
         self.period = period
         self.path = photo_storage_path
         self.rec = EmotionsRecognizer(emotions)
 
     def analyze_photos(self):
+        """Method for analyzing emotions on photos"""
         photo_count = 0
         cap = cv2.VideoCapture(0)
         while True:
@@ -28,7 +40,6 @@ class FrameAnalyzer:
             cv2.imwrite(frame_path, frame)
             prediction = self.rec.predict(os.path.join(frame_path))
             os.remove(frame_path)
-            print(f'{frame_path}: {prediction}')
             photo_count += 1
             sleep(self.period)
         cap.release()
