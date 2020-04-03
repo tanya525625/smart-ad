@@ -1,4 +1,4 @@
-# advertising-system
+# SmartAd
 
 System for providing advertising depending on the environment and emotions of a person.
 
