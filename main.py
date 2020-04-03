@@ -1,10 +1,12 @@
-import os
-from tools.emotions_recognizer import EmotionsRecognizer
+from tools.photo_maker import FrameAnalyzer
 
 
 if __name__ == "__main__":
     path_to_photos = "photos"
-    emotions = ['happiness', 'anger']
-    rec = EmotionsRecognizer(emotions)
-    for photo in os.listdir(path_to_photos):
-        prediction = rec.predict(os.path.join(path_to_photos, photo))
+    period = 10
+    emotions = ['happiness', 'disgust', 'surprise']
+
+    ph_maker = FrameAnalyzer(period, path_to_photos, emotions)
+    ph_maker.analyze_photos()
+
+
