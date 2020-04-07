@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "smartyad",
+  "private_key_id": "4165e1b2eefb880819cead08f4fc16fd9b1cb001",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCx3AS4PyofmJms\noo0j3qm8AFQ+/uMqvS+KZGRjfvWUR61cemREaFzmgVScdqPKwLbq4IE11r64/hTj\nKysESPIHadhcdUjOz1EadDveuGwSoUzF7csn3cEwC9kKStI8n8N/78LKXi1cJmtG\nhjOtOC6lkxPX6+uN12y8WTggl4Bu6kVS/UI86btHO/vxSpkepkFCNbTsphCY7tQo\nVBmlqD56CVCjOUaJXkTJwiyB7h63E0mUESYXz/wVpPnR4NAsabwuPkWYZHVBe4uX\n3dU6OijXD04nJYm3We/Xi6saVVIiIcP5aN7S0kEvDIb/6Xb7yayLwCv+lfhr8rIB\nJO3mjE7zAgMBAAECggEAT9TZqXlwhs4P7BTqFPeUZ/Yd2ki93ikcdZmqFZ6ey/eA\nMMoexzWwvSW/vJrj2dW2RKaQWIITCSXCalSt8jZrrDguDRH3pBwZ4y3Y0ZclqxcL\nRqv9S9+VHuOyf5Ql2WA8d+g+Hmc3JO15qSYDe/SDu33QolIaYIgZHlFNiBN4ak+s\nozsqmwrCE/t1GMVou7/dfUtcrSXVQ6pJiNH213yhsiH0Zy4uq4fFkXe4VOcr1Wru\ns01/LBvAIKZziH1ysdSVRVfCUPwgA+Ni51gUI1Uddd1qkspAly4Usz74bnArf2tS\nR3j6n0EAcS1MnM/qUUvhV/LoNbwYN+X1wL8qpK1+AQKBgQDoEmY2Wqtk/6Za9Quj\nJXUDeT4FiLvuDbAbys1zf1KYzbxkn8EVrjLF+mkHUPVNni5aH9/bGN4ubG7mp9Z0\nrSo+5lsljtiubBd8zMetzFB/PfyZK8k3ZHoFwFpbZJDTISysDZpNvr8Loh+hXLzt\nI1qHaV9UrFgJem+gyW0ruZmiYQKBgQDEMqrWf9IrZ0iv6tGSVZNT8xTW7l7witTH\np7ZporgDQXf2B3wtkamkDAM3Uoi4ECH1P3PCqX4xq2HC1GWapoVlzStlTf96zmYo\nLnsTWTlfbLLnP0UJ1bS3C8/ypeN2Bq06kYxoWPgg/jhRHYeuYu2OOur4PzKaUWW1\nDKYLhhAZ0wKBgQCULEs+oR2V2vToVlUb0aqokRzcg7UaBXtQA2iyObUPAy0qQiYS\nJasdZQjyNuqoqDqIKJnRVktl8K3Ob5Mp4/Z5OrMvg8ktdK56bHWBrlYnJ/jEA4Tx\n7SFL0sjeWZNuelv/bp/6y7NHRjhT2tZ1woDmvIy1j2SWiKoFSxZ9OH+zgQKBgAjB\nrihGqi2vvWnElDfww9OSXNK+7tPTjm2eyaBrV8UlbeI4MU2jW6vrsVUNxPZaGfnl\nLBh7EhvLZ2CXtDUzy25gutgZpBZqEdsnP+z8JXhh1JZHl6A5vogQ6eYNi1pgL+kW\nR+r8VY67ae4M4FpjJfEcJhKQV4TVrzFmcB7BjARrAoGAbor0t7B34E7XxCHkNlIp\nOmlCNMFRpytaCTkHWL3XCQoJfetRPNzA7totYM7ZJnzUhq2Nf106l7djcJf6rs78\nQvWMSs50QTdmO3yfuldTFENYNnoTst2AO2+rw0EBYcaOsm40eVJ+3nKRH+FH7B3q\nUir0e3Ljlivy/7IDl8u0EKw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "katebai@smartyad.iam.gserviceaccount.com",
+  "client_id": "101571186567649213871",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/katebai%40smartyad.iam.gserviceaccount.com"
+}
