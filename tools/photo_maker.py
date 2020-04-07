@@ -1,6 +1,5 @@
 from cv2 import cv2
 import sqlalchemy
-import logging
 
 import os
 from time import sleep
@@ -48,6 +47,7 @@ class FrameAnalyzer:
             sleep(self.period)
         cap.release()
 
+
 def connect_to_db():
     db_user = os.environ.get("DB_USER")
     db_pass = os.environ.get("DB_PASS")
@@ -66,6 +66,7 @@ def connect_to_db():
     conn = db.connect()
 
     return conn
+
 
 def save_pred_to_db(conn, prediction):
     board_id = os.environ.get("BOARD_ID")
