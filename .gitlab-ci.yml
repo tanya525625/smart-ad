@@ -30,8 +30,7 @@ test:
         - apt-get update
         - apt-get -y install python3-pip
         - apt-get -y install python3-psycopg2
-    script:
         - apt-get install -y python-lasagne
         - pip3 install -r requirements.txt
-        - pytest test_program.py
-    coverage: '/^(?i)(TOTAL).*\s+(\d+\%)$/'
+    script:
+        - pytest tests.py
