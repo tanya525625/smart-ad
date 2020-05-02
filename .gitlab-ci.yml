@@ -33,4 +33,5 @@ test:
     script:
         - apt-get install -y python-lasagne
         - pip3 install -r requirements.txt
+        - pytest test_program.py
     coverage: '/^(?i)(TOTAL).*\s+(\d+\%)$/'

@@ -101,7 +101,12 @@ class FERModel:
         normalized_prediction = [x/sum(prediction) for x in prediction]
         for emotion in self.emotion_map.keys():
             print('%s: %.1f%%' % (emotion, normalized_prediction[self.emotion_map[emotion]]*100))
-        dominant_emotion_index = np.argmax(prediction)
+        if normalized_prediction[1] > 0.2:
+            dominant_emotion_index = 1
+        elif normalized_prediction[2] > 0.2:
+            dominant_emotion_index = 2
+        else:
+            dominant_emotion_index = np.argmax(prediction)
         for emotion in self.emotion_map.keys():
             if dominant_emotion_index == self.emotion_map[emotion]:
                 dominant_emotion = emotion
