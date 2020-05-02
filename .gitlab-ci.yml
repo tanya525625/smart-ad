@@ -1,0 +1,37 @@
+image: ubuntu:18.04
+services:
+    - docker:dind
+
+stages:
+    - build
+    - test
+
+before_script:
+    - apt-get update
+    - apt install -y curl
+    # docker installing
+    - curl -fsSL https://get.docker.com -o get-docker.sh
+    - sh get-docker.sh
+    # login to gitlab
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+
+build:
+  stage: build
+  before_script:
+    - apt-get update
+    - apt install -y curl
+    # docker installing
+    - curl -fsSL https://get.docker.com -o get-docker.sh
+    - sh get-docker.sh
+
+test:
+    stage: test
+    before_script:
+        - apt-get update
+        - apt-get -y install python3-pip
+        - apt-get -y install python3-psycopg2
+        - pip3 install -r requirements.txt
+#    script:
+#        - pytest statistics_test.py
+#        - pytest --cov=weather_statistics_app statistics_test.py
+    coverage: '/^(?i)(TOTAL).*\s+(\d+\%)$/'
