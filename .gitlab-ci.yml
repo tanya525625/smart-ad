@@ -34,5 +34,6 @@ test:
         - apt-get -y install python3-psycopg2
         - apt-get install -y python-lasagne
         - pip3 install -r requirements.txt
+        - usermod -aG docker USER
     script:
         - pytest tests.py
