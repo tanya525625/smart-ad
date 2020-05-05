@@ -21,6 +21,15 @@ before_script:
 build:
     stage: build
     before_script:
+        - newgrp docker
+#        - curl -L --output /usr/local/bin/gitlab-runner https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64
+#        - chmod +x /usr/local/bin/gitlab-runner
+#        - sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/bash
+#        - gitlab-runner register -n \
+#            --url https://gitlab.com/ \
+#            --registration-token REGISTRATION_TOKEN \
+#            --executor shell \
+#            --description "My Runner"
         - usermod -aG docker gitlab-runner
     script:
         - docker build -t smart-ad .
