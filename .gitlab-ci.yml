@@ -34,7 +34,7 @@ build:
 #            --registration-token REGISTRATION_TOKEN \
 #            --executor shell \
 #            --description "My Runner"
-        - usermod -aG docker gitlab-runner
+#        - usermod -aG docker gitlab-runner
     script:
         - docker build -t smart-ad .
 
