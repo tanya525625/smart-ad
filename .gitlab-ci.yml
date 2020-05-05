@@ -17,6 +17,7 @@ before_script:
 
 build:
     stage: build
+#    image: docker:19.03.1
     before_script:
         - apt-get update
         - apt install -y curl
@@ -34,7 +35,7 @@ build:
 #            --registration-token REGISTRATION_TOKEN \
 #            --executor shell \
 #            --description "My Runner"
-#        - usermod -aG docker gitlab-runner
+#        - usermod -aG docker $CI_BUILD_TOKEN
     script:
         - docker build -t smart-ad .
 
