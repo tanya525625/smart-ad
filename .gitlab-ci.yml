@@ -23,6 +23,7 @@ build:
       # docker installing
       - curl -fsSL https://get.docker.com -o get-docker.sh
       - sh get-docker.sh
+    script:
       - docker build -t smart-ad .
 
 test:
