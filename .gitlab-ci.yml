@@ -14,15 +14,13 @@ before_script:
     - sh get-docker.sh
     # login to gitlab
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - apt-get update
+    - apt-get -y install python3-pip
+    - pip3 install docker-compose==1.9.0
 
 build:
     image: docker:latest
     stage: build
-    before_script:
-      - apt-get update
-      - apt install -y curl
-      - apt-get -y install python3-pip
-      - pip3 install docker-compose==1.9.0
     script:
       - docker-compose build
 
