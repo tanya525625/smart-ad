@@ -22,7 +22,7 @@ build:
     image: docker:latest
     stage: build
     script:
-      - docker-compose build
+      - docker build -t smart-ad .
 
 test:
     stage: test
