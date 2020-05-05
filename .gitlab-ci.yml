@@ -6,14 +6,14 @@ stages:
     - build
     - test
 
-before_script:
-    - apt-get update
-    - apt install -y curl
-    # docker installing
-    - curl -fsSL https://get.docker.com -o get-docker.sh
-    - sh get-docker.sh
-    # login to gitlab
-    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+#before_script:
+#    - apt-get update
+#    - apt install -y curl
+#    # docker installing
+#    - curl -fsSL https://get.docker.com -o get-docker.sh
+#    - sh get-docker.sh
+#    # login to gitlab
+#    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
 
 build:
     stage: build
