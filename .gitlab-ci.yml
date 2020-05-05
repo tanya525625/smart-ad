@@ -6,36 +6,9 @@ stages:
     - build
     - test
 
-#before_script:
-#    - apt-get update
-#    - apt install -y curl
-#    # docker installing
-#    - curl -fsSL https://get.docker.com -o get-docker.sh
-#    - sh get-docker.sh
-#    # login to gitlab
-#    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
-
 build:
     stage: build
     image: docker:19.03.1
-    before_script:
-#        - apt-get update
-#        - apt install -y curl
-#        - curl -fsSL https://get.docker.com -o get-docker.sh
-#        - sh get-docker.sh
-##        - groupadd docker
-##        - gpasswd -a gitlab-runner docker
-##        - service docker restart
-##        - newgrp docker
-##        - curl -L --output /usr/local/bin/gitlab-runner https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64
-##        - chmod +x /usr/local/bin/gitlab-runner
-##        - sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/bash
-##        - gitlab-runner register -n \
-##            --url https://gitlab.com/ \
-##            --registration-token REGISTRATION_TOKEN \
-##            --executor shell \
-##            --description "My Runner"
-##        - usermod -aG docker $CI_BUILD_TOKEN
     script:
         - docker build -t smart-ad .
 
