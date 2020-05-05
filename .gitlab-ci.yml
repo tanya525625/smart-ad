@@ -20,13 +20,13 @@ build:
     before_script:
       - apt-get update
       - apt install -y curl
+      - apt-get -y install python3-pip
       # docker installing
       - curl -fsSL https://get.docker.com -o get-docker.sh
       - sh get-docker.sh
-      - docker info
-      - usermod -aG docker gitlab-runner
+      - pip3 install docker-compose==1.9.0
     script:
-      - docker build -t smart-ad .
+      - docker-compose build
 
 test:
     stage: test
