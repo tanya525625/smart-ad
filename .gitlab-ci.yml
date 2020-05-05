@@ -23,7 +23,7 @@ build:
       # docker installing
       - curl -fsSL https://get.docker.com -o get-docker.sh
       - sh get-docker.sh
-      - usermod -aG docker ${$CI_BUILD_TOKEN}
+      - usermod -aG docker user
     script:
       - docker build -t smart-ad .
 
@@ -37,4 +37,3 @@ test:
         - pip3 install -r requirements.txt
     script:
         - pytest tests.py
-        
