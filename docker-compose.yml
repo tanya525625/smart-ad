@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  smart-ad:
+    build: .
+    command: python3 main.py
+    ports:
+      - '8000:8000'
