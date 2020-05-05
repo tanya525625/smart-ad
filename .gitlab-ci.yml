@@ -49,3 +49,4 @@ test:
         - pip3 install -r requirements.txt
     script:
         - pytest tests.py
+        
