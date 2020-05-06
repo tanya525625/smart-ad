@@ -1,5 +1,6 @@
 import requests
 import os
+import subprocess, sys
 
 
 class AdvLauncher:
@@ -35,7 +36,9 @@ class AdvLauncher:
                 weather_got = data['weather'][0]['main']
                 path = os.path.join(os.path.dirname(__file__), '..', 'videos', weather_got, weather_got + '-'
                                     + self.emotion + '.mp4')
-                os.startfile(path)
+                
+                opener ="open" if sys.platform == "darwin" else "xdg-open"
+                subprocess.call([opener, path])
             except Exception as e:
                 print("Exception (video):", e)
                 pass
