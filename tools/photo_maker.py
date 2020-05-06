@@ -44,7 +44,7 @@ class FrameAnalyzer:
             prediction = self.rec.predict(os.path.join(frame_path))
             city_id = city_from_db(conn)
             adv = AdvLauncher(prediction, city_id)
-            adv.adv_show()
+            adv.adv_show(frame)
             save_pred_to_db(conn, prediction)
             os.remove(frame_path)
             photo_count += 1
