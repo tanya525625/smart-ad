@@ -15,7 +15,7 @@ Attention! Using of Python 3.6 is required
 4. Run $ python main.py
 
 #### Presentation 
-1. Slides(https://drive.google.com/file/d/1MUb8IObiHoAIXYgsBe3zeIbV_K-wlXho/view?usp=sharing)
+1. [Slides](https://drive.google.com/file/d/1MUb8IObiHoAIXYgsBe3zeIbV_K-wlXho/view?usp=sharing)
 2. Demonstration()
 
 #### Where is done
