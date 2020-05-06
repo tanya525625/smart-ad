@@ -13,3 +13,10 @@ Attention! Using of Python 3.6 is required
 2. In separate terminal window run $ . ./scripts/run_proxy.sh
 3. In another terminal window activate virtual environment ($ source env/bin/activate) and run $ . ./scripts/export_virtvars.sh
 4. Run $ python main.py
+
+#### Presentation 
+1. Slides(https://drive.google.com/file/d/1MUb8IObiHoAIXYgsBe3zeIbV_K-wlXho/view?usp=sharing)
+2. Demonstration()
+
+#### Where is done
+The program was made for the course 'IOT academy' in SPbU in 2020
