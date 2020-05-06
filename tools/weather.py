@@ -2,22 +2,21 @@ import requests
 import os
 
 
-class WeatherPrediction:
-    def __init__(self, emotion):
+class AdvLauncher:
+    def __init__(self, emotion, city_id):
 
-        self.city_name = "Saint Petersburg"
-        self.city_id = 1496990
-        self.appid = "dd7e499466fda051ee3522182ef55d14"
-        self.temperature = ["Clear", "Clouds", "Rain", "Snow", "Thunderstorm", "Drizzle"]
+        self.city_id = city_id
+        self.app_id = "dd7e499466fda051ee3522182ef55d14"
+        self.weather = ["Clear", "Clouds", "Rain", "Snow", "Thunderstorm", "Drizzle"]
         self.emotion = emotion
-        self.mod = 3
+        self.mod = "run"  # run or test mode
 
-    def adv_launch(self):
-        """Погода на один день"""
-        if self.mod == 1:
+    def adv_show(self):
+        """One day broadcast"""
+        if self.mod == "test":
             try:
                 res = requests.get("http://api.openweathermap.org/data/2.5/weather",
-                                params={'id': city_id, 'units': 'metric', 'lang': 'ru', 'APPID': appid})
+                                   params={'id': self.city_id, 'units': 'metric', 'lang': 'ru', 'APPID': self.app_id})
                 data = res.json()
                 print("conditions:", data['weather'][0]['main'])
                 print("temp:", data['main']['temp'])
@@ -27,28 +26,14 @@ class WeatherPrediction:
                 print("Exception (weather):", e)
             pass
 
-        """Погода на пять дней"""
-        if self.mod == 2:
-            try:
-                res = requests.get("http://api.openweathermap.org/data/2.5/forecast",
-                                params={'id': city_id, 'units': 'metric', 'lang': 'ru', 'APPID': appid})
-                data = res.json()
-                for i in data['list']:
-                    print( i['dt_txt'], '{0:+3.0f}'.format(i['main']['temp']), i['weather'][0]['main'] )
-            except Exception as e:
-                print("Exception (forecast):", e)
-                pass
-
-        """Основная программа - воспроизведение видео"""
-        if self.mod == 3:
+        """Main program - video launching"""
+        if self.mod == "run":
             try:
                 res = requests.get("http://api.openweathermap.org/data/2.5/weather",
-                                params={'id': self.city_id, 'units': 'metric', 'lang': 'ru', 'APPID': self.appid})
+                                   params={'id': self.city_id, 'units': 'metric', 'lang': 'ru', 'APPID': self.app_id})
                 data = res.json()
-                weatherGot = data['weather'][0]['main']
-                # weatherGot = 'Snow'
-                weatherNb = self.temperature.index(weatherGot)
-                path = os.path.join(os.path.dirname(__file__), '..', 'videos', weatherGot, weatherGot + '-'
+                weather_got = data['weather'][0]['main']
+                path = os.path.join(os.path.dirname(__file__), '..', 'videos', weather_got, weather_got + '-'
                                     + self.emotion + '.mp4')
                 os.startfile(path)
             except Exception as e:
