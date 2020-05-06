@@ -5,6 +5,7 @@ import os
 from time import sleep
 
 from tools.emotions_recognizer import EmotionsRecognizer
+from tools.weather import AdvLauncher
 
 
 def make_frame(cap):
@@ -41,6 +42,9 @@ class FrameAnalyzer:
             frame_path = os.path.join(self.path, f'photo_{photo_count}.png')
             cv2.imwrite(frame_path, frame)
             prediction = self.rec.predict(os.path.join(frame_path))
+            city_id = city_from_db(conn)
+            adv = AdvLauncher(prediction, city_id)
+            adv.adv_show()
             save_pred_to_db(conn, prediction)
             os.remove(frame_path)
             photo_count += 1
@@ -75,3 +79,12 @@ def save_pred_to_db(conn, prediction):
     ).fetchall()[0][0]
     conn.execute("INSERT INTO records(emot_id, board_id) "
                  "VALUES("+str(emot_id)+", "+str(board_id)+");")
+
+
+def city_from_db(conn):
+    curr_board_id = os.environ.get("BOARD_ID")
+    city_id = conn.execute(
+        "SELECT city_id FROM billboards WHERE board_id=\""+curr_board_id+"\";"
+    ).fetchall()[0][0]
+    return city_id
+
