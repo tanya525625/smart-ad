@@ -2,7 +2,6 @@
 
 System for providing advertising depending on the environment and emotions of a person.
 
-
 #### Requirements
 All requirements you can install from the 'requirements.txt' file. Just: pip install -r requirements.txt
 
@@ -14,9 +13,8 @@ Attention! Using of Python 3.6 is required
 3. In another terminal window activate virtual environment ($ source env/bin/activate) and run $ . ./scripts/export_virtvars.sh
 4. Run $ python main.py
 
-#### Presentation 
+### About
 1. [Slides](https://drive.google.com/file/d/1MUb8IObiHoAIXYgsBe3zeIbV_K-wlXho/view?usp=sharing)
-2. Demonstration()
+2. [Demonstration](https://youtu.be/_tbPu9nHQxs)
 
-#### Where is done
-The program was made for the course 'IOT academy' in SPbU in 2020
+The project was made for [Samsung IoT Academy](https://myitacademy.ru/edu/) in SPbU in 2020
